@@ -7,8 +7,6 @@ def home(request):
         return redirect('/user_home')
     return render(request, 'the_jar/home.html')
 
-
-
 def logout_view(request):
     logout(request)
     return redirect("/")
@@ -16,4 +14,8 @@ def logout_view(request):
 def user_home(request):
     return render(request, 'the_jar/user_home.html')
 
+def create_jar(request):
+    return
 
+def view_jar(request):
+    return
