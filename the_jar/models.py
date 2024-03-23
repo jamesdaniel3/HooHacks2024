@@ -11,7 +11,7 @@ class Jar(models.Model):
 
     name = models.CharField(max_length=100)
     users_in_jar = models.ManyToManyField(User)
-    mode = models.CharField(max_length=20, choices=ModeChoices.choices)
+    mode = models.CharField(max_length=900, choices=ModeChoices.choices)
     start_date = models.DateField()
     end_date = models.DateField(null=True, blank=True)
     reward = models.CharField(max_length=100, null=True, blank=True)
