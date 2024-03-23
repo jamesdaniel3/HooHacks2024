@@ -8,10 +8,15 @@
     border-bottom: 1px solid darkgreen;
 }
 
+.body {
+    display: flex;
+}
+
 .buttons {
     display: flex;
     align-items: center;
 }
+
 .button {
     background-color: darkgreen;
     color: white;
@@ -21,3 +26,44 @@
     border-radius: 5px;
     cursor: pointer;
 }
+
+
+.shelf {
+    width: 100%;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+    background-color: #d3b683;
+    padding: 20px;
+    height: auto; /* Change height to auto to accommodate variable content */
+    display: flex;
+    flex-direction: column; /* Change flex direction to column */
+    align-items: flex-start; /* Align items to start */
+
+}
+
+
+.line {
+    height: 15px;
+    background-color: #4d3319;
+    width: 100%; /* Ensure the line spans the full width */
+}
+
+.body.shelf.jar {
+    flex-direction: row;
+    margin: 10px;
+    align-items: flex-end;
+}
+
+.jar {
+    display: flex; /* Use flex to align images horizontally */
+    margin-top: 10px; /* Add margin between lines */
+
+}
+
+.jar-img {
+    width: 150px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
