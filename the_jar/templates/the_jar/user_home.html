@@ -1,10 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+{% load static %}
 <head>
     <meta charset="UTF-8">
     <title>Welcome to the Jar!!</title>
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Jar</title>
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'the_jar/style.css' %}">
 </head>
 <body>
+  {% load socialaccount %}
+
+   <header class="header">
+        <div class="title">The Jar</div>
+        <div class="buttons">
+            {% if user.is_authenticated %}
+                <form id="logout-form" action="{% url 'logout' %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit" class="button">Logout</button>
+                </form>
+            {% else %}
+                <form id="google-login-form" action="{% provider_login_url 'google' %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit" class="button" onclick="signInWithGoogle()">Sign in with Google</button>
+                </form>
+            {% endif %}
+        </div>
+   </header>
+
+  <div class="body">
+      <div class="shelf">
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+
+      <div class="menu buttons">
+          <form class="buttons" method="post">
+              {% csrf_token %}
+              <button type="submit" class="button">Make New Jar</button>
+          </form>
+
+          <form class="buttons" method="post">
+              {% csrf_token %}
+              <button type="submit" class="button">My Jars</button>
+          </form>
+
+      </div>
+  </div>
+
 
 </body>
 </html>
