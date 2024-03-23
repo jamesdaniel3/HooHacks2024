@@ -15,5 +15,9 @@ class Jar(models.Model):
     reward = models.CharField(max_length=100, null=True, blank=True)
     punishment = models.CharField(max_length=100, null=True, blank=True)
 
-    def __str__(self):
-        return self.name
+
+class Jam(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    jar = models.ForeignKey(Jar, on_delete=models.CASCADE)
+    creation_datetime = models.DateTimeField(auto_now_add=True)
+
