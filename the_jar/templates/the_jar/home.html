@@ -12,11 +12,11 @@
     <style>
         /* Custom CSS for the content div */
         .content {
-            background-color: #B8D9B8; /* Background color */
+            background-color: #D6F3D6; /* Background color light green */
             padding: 20px; /* Add padding */
-            border-radius: 10px; /* Add border radius */
+            border-radius: 50px; /* Add border radius */
             font-family: Arial, sans-serif; /* Specify font */
-            color: #4d3319; /* Text color */
+            color: #4d3319; /* Text color - brown */
         }
 
         .content ul {
@@ -26,11 +26,29 @@
         .content h1 {
             font-size: 30px; /* Increase font size */
         }
+        .title {
+            font-size: 50px; /* Increase font size */
+            color: #4d3319; /* Text color - brown */
+        }
 
         .content img {
             max-width: 100%; /* Ensure image doesn't exceed container width */
             display: block; /* Make image block level */
             margin-top: 20px; /* Add some space between the ordered list and the image */
+        }
+        
+        .container {
+            display: flex; /* Use flexbox layout */
+            align-items: center; /* Align items vertically in the center */
+        }
+        
+        .content {
+            flex: 1; /* Take up remaining space */
+            /* Your existing content styles */
+        }
+        
+        .image {
+            margin-right: 20px; /* Add some space between content and image */
         }
     </style>
 </head>
@@ -52,10 +70,13 @@
             {% endif %}
         </div>
     </header>
-
+<div class="container">
+    <div class="image">
+        <img src="https://static.vecteezy.com/system/resources/previews/026/757/715/non_2x/glass-jar-with-ai-generated-free-png.png" alt="JarImage" width="150px">
+    </div>  
     <div class="content">
         <h1>
-            The Jar helps your friend group track habits together;
+            The Jar helps you track healthy habits together;
              <h1> and keep each other all too accountable...
              </h1>
       </h1>
@@ -64,8 +85,11 @@
             <li>Track Progress</li>
             <li>Cheer Each Other On!</li>
         </ul>
-        <img src="{% static 'jar-of-jam.png' %}" alt="JarIcon">
+     
+        
     </div>
+     
+</div>
 
     <script>
         function signInWithGoogle() {
