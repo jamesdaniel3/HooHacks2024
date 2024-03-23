@@ -16,7 +16,13 @@
 
    <header class="header">
         <div class="title">The Jar</div>
+
+
         <div class="buttons">
+            <form class="buttons" method="post">
+              {% csrf_token %}
+              <button type="submit" class="button">My Jars</button>
+          </form>
             {% if user.is_authenticated %}
                 <form id="logout-form" action="{% url 'logout' %}" method="post">
                     {% csrf_token %}
@@ -33,25 +39,28 @@
 
   <div class="body">
       <div class="shelf">
+            <div class="jar">
+                <img class="jar-img" src="https://static.vecteezy.com/system/resources/previews/026/757/715/non_2x/glass-jar-with-ai-generated-free-png.png" alt="Image">
+                <img class="jar-img" src="https://static.vecteezy.com/system/resources/previews/026/757/715/non_2x/glass-jar-with-ai-generated-free-png.png" alt="Image" >
+                <img class="jar-img" src="https://static.vecteezy.com/system/resources/previews/026/757/715/non_2x/glass-jar-with-ai-generated-free-png.png" alt="Image">
+                <img class="jar-img" src="https://static.vecteezy.com/system/resources/previews/026/757/715/non_2x/glass-jar-with-ai-generated-free-png.png" alt="Image">
+                <img class="jar-img" src="https://static.vecteezy.com/system/resources/previews/026/757/715/non_2x/glass-jar-with-ai-generated-free-png.png" alt="Image">
+
+            </div>
         <div class="line"></div>
-        <div class="line"></div>
+            <div class="jar">
+                <img class="jar-img" src="https://static.vecteezy.com/system/resources/previews/026/757/715/non_2x/glass-jar-with-ai-generated-free-png.png" alt="Image">
+                <img class="jar-img" src="https://static.vecteezy.com/system/resources/previews/026/757/715/non_2x/glass-jar-with-ai-generated-free-png.png" alt="Image" >
+                <img class="jar-img" src="https://static.vecteezy.com/system/resources/previews/026/757/715/non_2x/glass-jar-with-ai-generated-free-png.png" alt="Image">
+                <img class="jar-img" src="https://static.vecteezy.com/system/resources/previews/026/757/715/non_2x/glass-jar-with-ai-generated-free-png.png" alt="Image">
+                <img class="jar-img" src="https://static.vecteezy.com/system/resources/previews/026/757/715/non_2x/glass-jar-with-ai-generated-free-png.png" alt="Image">
+
+            </div>
+        <div class="line" ></div>
       </div>
 
-      <div class="menu buttons">
-          <form class="buttons" method="post">
-              {% csrf_token %}
-              <button type="submit" class="button">Make New Jar</button>
-          </form>
-
-          <form class="buttons" method="post">
-              {% csrf_token %}
-              <button type="submit" class="button">My Jars</button>
-          </form>
-
-      </div>
   </div>
 
-  <img src="https://static.vecteezy.com/system/resources/previews/026/757/715/non_2x/glass-jar-with-ai-generated-free-png.png" alt="Image" width="100px">
 
 </body>
 
