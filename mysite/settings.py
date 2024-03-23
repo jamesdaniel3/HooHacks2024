@@ -32,6 +32,10 @@ SITE_ID = 1
 STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, 'the_jar/static')
+# ]
+
 #MEDIA_URL = 'images/'
 #MEDIA_ROOT = BASE_DIR / "images"
 

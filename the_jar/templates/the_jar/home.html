@@ -9,10 +9,33 @@
     <link rel="shortcut icon" href="#">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="{% static 'the_jar/style.css' %}">
+    <style>
+        /* Custom CSS for the content div */
+        .content {
+            background-color: #B8D9B8; /* Background color */
+            padding: 20px; /* Add padding */
+            border-radius: 10px; /* Add border radius */
+            font-family: Arial, sans-serif; /* Specify font */
+            color: #4d3319; /* Text color */
+        }
+
+        .content ul {
+            font-size: 20px; /* Increase font size */
+            
+        }
+        .content h1 {
+            font-size: 30px; /* Increase font size */
+        }
+
+        .content img {
+            max-width: 100%; /* Ensure image doesn't exceed container width */
+            display: block; /* Make image block level */
+            margin-top: 20px; /* Add some space between the ordered list and the image */
+        }
+    </style>
 </head>
 <body>
   {% load socialaccount %}
-
    <header class="header">
         <div class="title">The Jar</div>
         <div class="buttons">
@@ -30,6 +53,20 @@
         </div>
     </header>
 
+    <div class="content">
+        <h1>
+            The Jar helps your friend group track habits together;
+             <h1> and keep each other all too accountable...
+             </h1>
+      </h1>
+        <ul>
+            <li>Build a Jar Together</li>
+            <li>Track Progress</li>
+            <li>Cheer Each Other On!</li>
+        </ul>
+        <img src="{% static 'jar-of-jam.png' %}" alt="JarIcon">
+    </div>
+
     <script>
         function signInWithGoogle() {
             document.getElementById('google-login-form').submit();
@@ -39,3 +76,4 @@
 
 </body>
 </html>
+
