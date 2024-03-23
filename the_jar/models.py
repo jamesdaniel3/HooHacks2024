@@ -1,11 +1,13 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+
 class Jar(models.Model):
     class ModeChoices(models.TextChoices):
-        OPTION_ONE = 'Option One', 'Option One Description'
-        OPTION_TWO = 'Option Two', 'Option Two Description'
-        OPTION_THREE = 'Option Three', 'Option Three Description'
+        LAST_MAN = "Last Jarling Standing", "Last Jarling standing wins"
+        COUNT = "Count", "The Jarling with the most Jams at the end of the competition wins"
+        BATTLE_ROYALE = "Battle Royale", ("On every interval, the Jarling with the least Jams dropped will fall out "
+                                          "of the competition till one remains")
 
     name = models.CharField(max_length=100)
     users_in_jar = models.ManyToManyField(User)
