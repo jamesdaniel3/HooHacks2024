@@ -28,16 +28,15 @@ def create_jar(request):
             }
 
     """
-    on submit:
-    - Need to get the user submitting and add it to the users in the jar as it submits
-
     need to conditionally display fields based on mode - maybe multi-step form?
     """
 
     if request.method == 'POST':
         form = JarForm(request.POST)
         if form.is_valid():
-            form.save()
+            jar = form.save()
+            jar.users_in_jar.add(request.user)
+            jar.save()
             return redirect('/user_home')
     else:
         form = JarForm()
