@@ -62,8 +62,14 @@
 }
 
 .jar-img {
-    width: 150px;
+    height: 250px;
     margin-right: 10px;
     margin-left: 10px;
 }
 
+.jar p {
+    margin: 0;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+}

@@ -19,3 +19,15 @@ def create_jar(request):
 
 def view_jar(request):
     return
+
+def my_jars(request):
+
+    jars_list = Jars.objects.all()
+
+    jars_list_for_user = []
+    for each in jars_list:
+        if request.user in each.users:
+            jars_list_for_user.append(each)
+
+    return render(request, 'the_jar/my_jars', {'users_in_jar': users_in_jar, 'jars_list': jars_list_for_user})
+

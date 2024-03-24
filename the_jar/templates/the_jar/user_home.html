@@ -40,20 +40,37 @@
   <div class="body">
       <div class="shelf">
             <div class="jar">
-                <img class="jar-img" src="https://static.vecteezy.com/system/resources/previews/026/757/715/non_2x/glass-jar-with-ai-generated-free-png.png" alt="Image">
-                <img class="jar-img" src="https://static.vecteezy.com/system/resources/previews/026/757/715/non_2x/glass-jar-with-ai-generated-free-png.png" alt="Image" >
-                <img class="jar-img" src="https://static.vecteezy.com/system/resources/previews/026/757/715/non_2x/glass-jar-with-ai-generated-free-png.png" alt="Image">
-                <img class="jar-img" src="https://static.vecteezy.com/system/resources/previews/026/757/715/non_2x/glass-jar-with-ai-generated-free-png.png" alt="Image">
-                <img class="jar-img" src="https://static.vecteezy.com/system/resources/previews/026/757/715/non_2x/glass-jar-with-ai-generated-free-png.png" alt="Image">
+
+
+                <div id="newjar">
+                    <p><a href="create_jar">New Jar</a></p>
+                    <img class="jar-img" src="https://static.vecteezy.com/system/resources/previews/026/757/715/non_2x/glass-jar-with-ai-generated-free-png.png" alt="Image">
+                </div>
+
+                {% for jar in jar_list %}
+                    <div>
+                        <p>Jar {{jar.id}}</p>
+                        <img class="jar-img" src="https://static.vecteezy.com/system/resources/previews/026/757/715/non_2x/glass-jar-with-ai-generated-free-png.png" alt="Image" >
+                    </div>
+                {% endfor %}
 
             </div>
+
         <div class="line"></div>
             <div class="jar">
-                <img class="jar-img" src="https://static.vecteezy.com/system/resources/previews/026/757/715/non_2x/glass-jar-with-ai-generated-free-png.png" alt="Image">
-                <img class="jar-img" src="https://static.vecteezy.com/system/resources/previews/026/757/715/non_2x/glass-jar-with-ai-generated-free-png.png" alt="Image" >
-                <img class="jar-img" src="https://static.vecteezy.com/system/resources/previews/026/757/715/non_2x/glass-jar-with-ai-generated-free-png.png" alt="Image">
-                <img class="jar-img" src="https://static.vecteezy.com/system/resources/previews/026/757/715/non_2x/glass-jar-with-ai-generated-free-png.png" alt="Image">
-                <img class="jar-img" src="https://static.vecteezy.com/system/resources/previews/026/757/715/non_2x/glass-jar-with-ai-generated-free-png.png" alt="Image">
+
+                {% if jar_list.length > 4%}
+                    {% for jar in jar_list %}
+                        <div>
+                            <p>Jar {{jar.id}}</p>
+                            <img class="jar-img" src="https://static.vecteezy.com/system/resources/previews/026/757/715/non_2x/glass-jar-with-ai-generated-free-png.png" alt="Image" >
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <div>
+                        <img class="jar-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/HD_transparent_picture.png/1280px-HD_transparent_picture.png" alt="Image" >
+                    </div>
+                {% endif %}
 
             </div>
         <div class="line" ></div>
